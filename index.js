@@ -1,5 +1,5 @@
 var name = document.querySelector("exampleInputName");
-var agender = document.querySelectorAll("form-user-create [name=agender]:checked");
+var gender = document.querySelectorAll("form-user-create [name=agender]:checked");
 var birth = document.querySelector("exampleInputBirth");
 var Country = document.querySelector("exampleInputCountry");
 var email = document.querySelector("exampleInputEmail");
@@ -14,7 +14,20 @@ var fields = document.querySelectorAll("#form-user-create [name]");
 
 fields.forEach(function(field, index){
 
-    console.log(field.id);
+    if (field.name == "gender") {
+
+        if (field.checked) {
+            console.log("SIM", field);
+
+        }
+
+    } else {
+
+        console.log("NÃO");
+
+    }
+
+    //console.log(field.id);
 
 
 
