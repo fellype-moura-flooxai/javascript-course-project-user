@@ -39,18 +39,19 @@ class UserController {
 
      this.getPhoto(this.formUpdateEl).then(
         (content) => {
+            console.log(content);
 
             if (!values.photo) {
-                result.photo = userOld._photo;
+                result._photo = userOld._photo;
             } else {
-                result.photo = content;
+                result._photo = content;
 
             }
 
             tr.dataset.user = JSON.stringify(result); 
 
             tr.innerHTML = `
-                <td><img src="${values.photo}" alt="User Image" class="img-circle img-sm"></td>
+                <td><img src="${result._photo}" alt="User Image" class="img-circle img-sm"></td>
                 <td>${result._name}</td> 
                 <td>${result._email}</td>
                 <td>${(result._admin) ? 'Sim' : 'Não'}</td>
@@ -236,6 +237,11 @@ class UserController {
     }
 
     addEventsTr(tr){
+
+        tr.querySelector(".btn-edit").addEventListener("click", e => {
+
+
+        });
 
         tr.querySelector(".btn-edit").addEventListener("click", e => {
 
