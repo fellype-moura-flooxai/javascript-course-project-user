@@ -55,7 +55,7 @@ class UserController {
 
             user.save();
 
-            this.getTr(user. tr);
+            this.getTr(user, tr);
 
      this.updateCount();       
 
